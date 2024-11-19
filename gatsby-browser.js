@@ -1,5 +1,9 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import React from 'react';
+
+export const onClientEntry = () => {
+  if (typeof window !== 'undefined') {
+    require('intersection-observer');
+  }
+};
+
+export const wrapRootElement = ({ element }) => <React.StrictMode>{element}</React.StrictMode>;

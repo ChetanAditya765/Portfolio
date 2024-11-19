@@ -168,9 +168,11 @@ const Menu = () => {
   let lastFocusableEl;
 
   const setFocusables = () => {
-    menuFocusables = [buttonRef.current, ...Array.from(navRef.current.querySelectorAll('a'))];
-    firstFocusableEl = menuFocusables[0];
-    lastFocusableEl = menuFocusables[menuFocusables.length - 1];
+    if (typeof document !== 'undefined') {
+      menuFocusables = [buttonRef.current, ...Array.from(navRef.current.querySelectorAll('a'))];
+      firstFocusableEl = menuFocusables[0];
+      lastFocusableEl = menuFocusables[menuFocusables.length - 1];
+    }
   };
 
   const handleBackwardTab = e => {
@@ -221,15 +223,17 @@ const Menu = () => {
   };
 
   useEffect(() => {
-    document.addEventListener('keydown', onKeyDown);
-    window.addEventListener('resize', onResize);
+    if (typeof window !== 'undefined') {
+      document.addEventListener('keydown', onKeyDown);
+      window.addEventListener('resize', onResize);
 
-    setFocusables();
+      setFocusables();
 
-    return () => {
-      document.removeEventListener('keydown', onKeyDown);
-      window.removeEventListener('resize', onResize);
-    };
+      return () => {
+        document.removeEventListener('keydown', onKeyDown);
+        window.removeEventListener('resize', onResize);
+      };
+    }
   }, []);
 
   const wrapperRef = useRef();
@@ -246,7 +250,8 @@ const Menu = () => {
           onClick={toggleMenu}
           menuOpen={menuOpen}
           ref={buttonRef}
-          aria-label="Menu">
+          aria-label="Menu"
+        >
           <div className="ham-box">
             <div className="ham-box-inner" />
           </div>
