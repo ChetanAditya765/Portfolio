@@ -26,13 +26,11 @@ Dark mode toggle without the flash of default theme. Important bits:
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     ...
     <script>
-      // Check for stored theme or fallback to system preference
+      // If there's a theme stored in localStorage, use it on the <html>
       const localStorageTheme = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = localStorageTheme || (prefersDark ? 'dark' : 'light');
-
-      // Apply the theme before DOM finishes rendering
-      document.documentElement.setAttribute('data-theme', theme);
+      if (localStorageTheme) {
+        document.documentElement.setAttribute('data-theme', localStorageTheme);
+      }
     </script>
   </head>
   <body>
@@ -42,13 +40,14 @@ Dark mode toggle without the flash of default theme. Important bits:
         aria-label="Activate dark mode"
         title="Activate dark mode"
       >
-        <!-- Icons for light/dark -->
-        <svg class="light-mode" role="img">
+        <!--
+        <svg class="light-mode">
           <use xlink:href="#sun"></use>
         </svg>
-        <svg class="dark-mode" role="img">
+        <svg class="dark-mode">
           <use xlink:href="#moon"></use>
         </svg>
+        -->
       </button>
     </div>
 
@@ -69,18 +68,6 @@ Dark mode toggle without the flash of default theme. Important bits:
   --bg: #000000;
   --text: #ffffff;
 }
-
-body {
-  background-color: var(--bg);
-  color: var(--text);
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.theme-toggle-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
 ```
 
 ## JavaScript
@@ -88,32 +75,19 @@ body {
 ```js:title=app.js
 const themeToggleBtn = document.querySelector('.js-theme-toggle');
 
-// Define toggle handler
+themeToggleBtn.addEventListener('click', () => onToggleClick());
+
 const onToggleClick = () => {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  const { theme } = document.documentElement.dataset;
+  const themeTo = theme && theme === 'light' ? 'dark' : 'light';
+  const label = `Activate ${theme} mode`;
 
-  // Update theme and save preference
-  document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
+  document.documentElement.setAttribute('data-theme', themeTo);
+  localStorage.setItem('theme', themeTo);
 
-  // Update button attributes
-  const label = `Activate ${currentTheme} mode`;
   themeToggleBtn.setAttribute('aria-label', label);
   themeToggleBtn.setAttribute('title', label);
 };
-
-// Initialize button state
-(() => {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  const initialLabel = `Activate ${currentTheme === 'light' ? 'dark' : 'light'} mode`;
-  themeToggleBtn.setAttribute('aria-label', initialLabel);
-  themeToggleBtn.setAttribute('title', initialLabel);
-})();
-
-// Attach click handler
-themeToggleBtn.addEventListener('click', onToggleClick);
-
 ```
 
 ## Resources
