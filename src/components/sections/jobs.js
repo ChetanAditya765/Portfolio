@@ -218,8 +218,10 @@ const Jobs = () => {
     }
   };
 
+  // Only re-run the effect if tabFocus changes
   useEffect(() => focusTab(), [tabFocus]);
 
+  // Focus on tabs when using up & down arrow keys
   const onKeyDown = e => {
     switch (e.key) {
       case KEY_CODES.ARROW_UP: {
@@ -240,95 +242,67 @@ const Jobs = () => {
     }
   };
 
-  const jobsList = [
-    {
-      company: "Google",
-      title: "AI-ML Virtual Intern",
-      range: "Apr 2024 – Jun 2024",
-      url: "https://google.com",
-      description: "Hands-on experience with cutting-edge AI/ML technologies, mentorship from industry leaders, and collaborative projects fostering growth and innovation.",
-    },
-    {
-      company: "Google",
-      title: "Android Developer Virtual Intern",
-      range: "Apr 2024 – Jun 2024",
-      url: "https://google.com",
-      description: "Gained expertise in Android app development, debugging, and coding. Worked on projects alongside experienced developers to build professional portfolio applications.",
-    },
-    {
-      company: "AWS",
-      title: "AI-ML Virtual Intern",
-      range: "Sep 2023 – Nov 2023",
-      url: "https://aws.amazon.com",
-      description: "Developed intelligent algorithms and machine learning models to solve complex problems, enhancing skills in artificial intelligence and data-driven solutions.",
-    },
-    {
-      company: "Bharat Intern",
-      title: "Machine Learning Intern",
-      range: "Sep 2023",
-      url: "https://bharatintern.live/",
-      description: "Worked on real-world projects leveraging Python to create predictive models, showcasing practical skills and effective problem-solving abilities.",
-    },
-    {
-      company: "RCB",
-      title: "Video Editor",
-      range: "Mar 2023 – May 2023",
-      url: "https://www.royalchallengers.com",
-      description: "Created motivational mashup videos for the team to enhance player morale and improve performance on the field.",
-    },
-  ];
-
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>
-      <h2 className="numbered-heading">Where I've Worked</h2>
+      <h2 className="numbered-heading">Where I’ve Worked</h2>
 
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
-          {jobsList.map(({ company }, i) => (
-            <StyledTabButton
-              key={i}
-              isActive={activeTabId === i}
-              onClick={() => setActiveTabId(i)}
-              ref={el => (tabs.current[i] = el)}
-              id={`tab-${i}`}
-              role="tab"
-              tabIndex={activeTabId === i ? "0" : "-1"}
-              aria-selected={activeTabId === i}
-              aria-controls={`panel-${i}`}
-            >
-              <span>{company}</span>
-            </StyledTabButton>
-          ))}
+          {jobsData &&
+            jobsData.map(({ node }, i) => {
+              const { company } = node.frontmatter;
+              return (
+                <StyledTabButton
+                  key={i}
+                  isActive={activeTabId === i}
+                  onClick={() => setActiveTabId(i)}
+                  ref={el => (tabs.current[i] = el)}
+                  id={`tab-${i}`}
+                  role="tab"
+                  tabIndex={activeTabId === i ? '0' : '-1'}
+                  aria-selected={activeTabId === i ? true : false}
+                  aria-controls={`panel-${i}`}
+                >
+                  <span>{company}</span>
+                </StyledTabButton>
+              );
+            })}
           <StyledHighlight activeTabId={activeTabId} />
         </StyledTabList>
 
         <StyledTabPanels>
-          {jobsList.map(({ company, title, range, url, description }, i) => (
-            <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
-              <StyledTabPanel
-                id={`panel-${i}`}
-                role="tabpanel"
-                tabIndex={activeTabId === i ? "0" : "-1"}
-                aria-labelledby={`tab-${i}`}
-                aria-hidden={activeTabId !== i}
-                hidden={activeTabId !== i}
-              >
-                <h3>
-                  <span>{title}</span>
-                  <span className="company">
-                    &nbsp;@&nbsp;
-                    <a href={url} className="inline-link" target="_blank" rel="noopener noreferrer">
-                      {company}
-                    </a>
-                  </span>
-                </h3>
-                <p className="range">{range}</p>
-                <div>
-                  <p>{description}</p>
-                </div>
-              </StyledTabPanel>
-            </CSSTransition>
-          ))}
+          {jobsData &&
+            jobsData.map(({ node }, i) => {
+              const { frontmatter, html } = node;
+              const { title, url, company, range } = frontmatter;
+
+              return (
+                <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
+                  <StyledTabPanel
+                    id={`panel-${i}`}
+                    role="tabpanel"
+                    tabIndex={activeTabId === i ? '0' : '-1'}
+                    aria-labelledby={`tab-${i}`}
+                    aria-hidden={activeTabId !== i}
+                    hidden={activeTabId !== i}
+                  >
+                    <h3>
+                      <span>{title}</span>
+                      <span className="company">
+                        &nbsp;@&nbsp;
+                        <a href={url} className="inline-link">
+                          {company}
+                        </a>
+                      </span>
+                    </h3>
+
+                    <p className="range">{range}</p>
+
+                    <div dangerouslySetInnerHTML={{ __html: html }} />
+                  </StyledTabPanel>
+                </CSSTransition>
+              );
+            })}
         </StyledTabPanels>
       </div>
     </StyledJobsSection>
