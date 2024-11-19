@@ -1,7 +1,7 @@
 ---
 date: '2023-05-31'
 title: 'Video Editor'
-company: 'Royal Challengers Bangalore'
+company: 'RCB'
 location: 'Remote'
 range: 'March - May 2023'
 url: 'https://www.royalchallengers.com'
