@@ -76,7 +76,9 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    if (prefersReducedMotion) {return;}
+    if (prefersReducedMotion) {
+      return;
+    }
     const timeout = setTimeout(() => setIsMounted(true), navDelay);
     return () => clearTimeout(timeout);
   }, []);
@@ -119,7 +121,7 @@ const Hero = () => {
       )}
       {!isMobile && (
         <div className="globe-container">
-          <Suspense fallback={<div>Loading globe...</div>}>
+          <Suspense fallback={<div></div>}>
             <Globe
               globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
               backgroundColor="rgba(0, 0, 0, 0)"
