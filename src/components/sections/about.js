@@ -129,57 +129,58 @@ const About = () => {
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
-    <h2 className="numbered-heading">About Me</h2>
-  
-    <div className="inner">
-      <StyledText>
-        <div>
-          <p>
-            Hello! My name is Chetan Aditya Lakka, and I am passionate about solving problems with
-            innovative technology. My interest in software engineering and AI started during my
-            undergraduate journey, where I began exploring how machine learning could solve real-world
-            challenges.
-          </p>
-  
-          <p>
-            Fast-forward to today, I’ve had the opportunity to work with{' '}
-            <a href="https://about.google/">Google</a>,{' '}
-            <a href="https://aws.amazon.com/">AWS</a>, and{' '}
-            <a href="https://bharatintern.live/">Bharat Intern</a>. My focus now is building intelligent,
-            inclusive solutions through AI and machine learning while actively contributing to open-source 
-            projects and leading technical initiatives.
-          </p>
-  
-          <p>
-            I’ve also worked on impactful projects like{' '}
-            <a href="https://github.com/ChetanAditya765/Autism-Prediction">Autism Detection</a> and{' '}
-            <a href="https://github.com/ChetanAditya765/Plant-Leaf-Prediction">Crop Disease Identification</a>, 
-            which aim to improve lives through the power of AI.
-          </p>
-  
-          <p>Here are a few technologies I’ve been working with recently:</p>
-        </div>
-  
-        <ul className="skills-list">
-          {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
-        </ul>
-      </StyledText>
-  
-      <StyledPic>
-        <div className="wrapper">
-          <StaticImage
-            className="img"
-            src="../../images/me.jpg"
-            width={500}
-            quality={95}
-            formats={['AUTO', 'WEBP', 'AVIF']}
-            alt="Headshot"
-          />
-        </div>
-      </StyledPic>
-    </div>
-  </StyledAboutSection>
-  
+      <h2 className="numbered-heading">About Me</h2>
+
+      <div className="inner">
+        <StyledText>
+          <div>
+            <p>
+              Hello! My name is Chetan Aditya Lakka, and I am passionate about solving problems with
+              innovative technology. My interest in software engineering and AI started during my
+              undergraduate journey, where I began exploring how machine learning could solve
+              real-world challenges.
+            </p>
+
+            <p>
+              Fast-forward to today, I’ve had the opportunity to work with{' '}
+              <a href="https://about.google/">Google</a>, <a href="https://aws.amazon.com/">AWS</a>,
+              and <a href="https://bharatintern.live/">Bharat Intern</a>. My focus now is building
+              intelligent, inclusive solutions through AI and machine learning while actively
+              contributing to open-source projects and leading technical initiatives.
+            </p>
+
+            <p>
+              I’ve also worked on impactful projects like{' '}
+              <a href="https://github.com/ChetanAditya765/Autism-Prediction">Autism Detection</a>{' '}
+              and{' '}
+              <a href="https://github.com/ChetanAditya765/Plant-Leaf-Prediction">
+                Crop Disease Identification
+              </a>
+              , which aim to improve lives through the power of AI.
+            </p>
+
+            <p>Here are a few technologies I’ve been working with recently:</p>
+          </div>
+
+          <ul className="skills-list">
+            {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
+          </ul>
+        </StyledText>
+
+        <StyledPic>
+          <div className="wrapper">
+            <StaticImage
+              className="img"
+              src="../../images/me.jpg"
+              width={500}
+              quality={95}
+              formats={['AUTO', 'WEBP', 'AVIF']}
+              alt="Headshot"
+            />
+          </div>
+        </StyledPic>
+      </div>
+    </StyledAboutSection>
   );
 };
 

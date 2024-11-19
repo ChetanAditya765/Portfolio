@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Globe from 'react-globe.gl';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
@@ -12,7 +11,6 @@ const StyledHeroSection = styled.section`
   min-height: 100vh;
   height: 100vh;
   padding: 0;
-  position: relative; /* For positioning elements */
 
   @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
     height: auto;
@@ -46,45 +44,11 @@ const StyledHeroSection = styled.section`
     ${({ theme }) => theme.mixins.bigButton};
     margin-top: 50px;
   }
-
-  .globe-container {
-    position: absolute;
-    top: 50%;
-    right: 5%;
-    transform: translateY(-50%);
-    width: 300px;
-    height: 300px;
-
-    /* Adjust globe size for smaller screens */
-    @media (max-width: 768px) {
-      width: 200px;
-      height: 200px;
-    }
-
-    @media (max-width: 480px) {
-      display: none; /* Hide the globe on very small screens */
-    }
-  }
 `;
 
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Detect if the screen width is small
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 480); // Set breakpoint for mobile
-    };
-
-    handleResize(); // Initial check
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -101,20 +65,20 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        A software engineer passionate about AI/ML. With experience from
-        internships at Google and AWS, I’ve worked on predictive modeling and
-        real-world AI challenges. I actively contribute to open-source projects
-        and lead initiatives promoting innovation, with impactful projects.
+        A software engineer passionate about AI/ML. With experience from internships at Google and
+        AWS, I’ve worked on predictive modeling and real-world AI challenges. I actively contribute
+        to open-source projects and lead initiatives promoting innovation, with impactful projects.
       </p>
     </>
   );
   const five = (
     <a
       className="email-link"
-      href="mailto:chetan.lakka@gmail.com"
+      href="https://www.newline.co/courses/build-a-spotify-connected-app"
       target="_blank"
-      rel="noreferrer">
-      Get in touch
+      rel="noreferrer"
+    >
+      Check out my course!
     </a>
   );
 
@@ -137,18 +101,6 @@ const Hero = () => {
               </CSSTransition>
             ))}
         </TransitionGroup>
-      )}
-
-      {/* Interactive Globe */}
-      {!isMobile && ( // Conditionally render the globe for non-mobile screens
-        <div className="globe-container">
-          <Globe
-            globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
-            backgroundColor="rgba(0, 0, 0, 0)"
-            width={300}
-            height={300}
-          />
-        </div>
       )}
     </StyledHeroSection>
   );
