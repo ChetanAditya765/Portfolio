@@ -94,8 +94,8 @@ const Hero = () => {
     </p>
   );
   const five = (
-    <a className="email-link" href="mailto:chetan.lakka@gmail.com" target="_blank" rel="noreferrer">
-      Get in touch
+    <a className="email-link" href="/resume.pdf" target="_blank" rel="noreferrer">
+      Check out my resume
     </a>
   );
 
