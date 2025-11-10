@@ -112,7 +112,6 @@ const StyledPic = styled.div`
     }
   }
 `;
-
 const About = () => {
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -123,9 +122,22 @@ const About = () => {
     }
 
     sr.reveal(revealContainer.current, srConfig());
-  }, []);
+  }, [prefersReducedMotion]);
 
-  const skills = ['AI', 'Java', 'HTML & CSS', 'Python', 'Machine Learning', 'MERN & MEAN(basics)'];
+  const skills = [
+    'Artificial Intelligence (AI)',
+    'Machine Learning',
+    'Deep Learning',
+    'Explainable AI (XAI)',
+    'Large Language Models (LLMs)',
+    'Python',
+    'PyTorch',
+    'TensorFlow',
+    'MERN & MEAN (Basics)',
+    'HTML, CSS & JavaScript',
+    'Java',
+    'Model Evaluation & Optimization',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,31 +147,37 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Chetan Aditya Lakka, and I am passionate about solving problems with
-              innovative technology. My interest in software engineering and AI started during my
-              undergraduate journey, where I began exploring how machine learning could solve
-              real-world challenges.
+              Hello! My name is <strong>Chetan Aditya Lakka</strong>. I build intelligent systems
+              that make complex problems easier to solve — with a focus on reliable ML, model
+              interpretability, and practical AI productisation. I became fascinated by software
+              engineering and AI during my undergraduate studies and have steadily moved from
+              prototyping ideas to shipping reproducible research and production-ready pipelines.
             </p>
 
             <p>
-              Fast-forward to today, I’ve had the opportunity to work with{' '}
-              <a href="https://about.google/">Google</a>, <a href="https://aws.amazon.com/">AWS</a>,
-              and <a href="https://bharatintern.live/">Bharat Intern</a>. My focus now is building
-              intelligent, inclusive solutions through AI and machine learning while actively
-              contributing to open-source projects and leading technical initiatives.
+              Professionally, I've contributed to programs at{' '}
+              <a href="https://about.google/">Google</a> and{' '}
+              <a href="https://aws.amazon.com/">AWS</a>, and I currently work as an LLM Trainer at{' '}
+              <a href="https://turing.com">Turing</a>, where I analyse model behaviour, produce
+              structured annotations, and help improve the reliability of agentic systems.
             </p>
 
             <p>
-              I’ve also worked on impactful projects like{' '}
+              On the research side, I authored <em>Reverse Attribution</em>, a model-agnostic
+              debugging framework that surfaces counter-evidence and explains why models fail —
+              implemented using SHAP, Integrated Gradients, and PyTorch. I also build applied ML
+              projects such as{' '}
               <a href="https://github.com/ChetanAditya765/Autism-Prediction">Autism Detection</a>{' '}
               and{' '}
-              <a href="https://github.com/ChetanAditya765/Plant-Leaf-Prediction">
-                Crop Disease Identification
-              </a>
-              , which aim to improve lives through the power of AI.
+              <a href="https://github.com/ChetanAditya765/Plant-Leaf-Prediction">Crop Detection</a>.
             </p>
 
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            <p>
+              I enjoy contributing to open-source, leading technical initiatives, and turning
+              research insights into tools that engineers and stakeholders can actually use.
+            </p>
+
+            <p>Here are a few technologies and areas I’ve been working with recently:</p>
           </div>
 
           <ul className="skills-list">

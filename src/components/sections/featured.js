@@ -326,6 +326,14 @@ const Featured = () => {
 
   const projects = [
     {
+      title: 'Reverse Attribution',
+      description:
+        'Built a model-agnostic debugging framework to explain and visualize ML model failures by identifying counter-evidence suppressing correct predictions. Implemented automated attribution pipelines using SHAP, Integrated Gradients, and PyTorch.',
+      tech: ['Python', 'Machine Learning', 'Explainable AI'],
+      github: 'https://github.com/ChetanAditya765/Reverse-Attribution',
+      image: 'reverse_attribution.png',
+    },
+    {
       title: 'Autism Detection',
       description:
         'Developed a machine learning model to predict autism spectrum disorder (ASD) in children based on behavioral and genetic data for early intervention and support.',
@@ -343,19 +351,21 @@ const Featured = () => {
     },
     {
       title: 'Crop Detection',
-      description: 'Implemented deep learning models to identify crop diseases, aiding farmers in timely disease management.',
+      description:
+        'Implemented deep learning models to identify crop diseases, aiding farmers in timely disease management.',
       tech: ['Deep Learning', 'Python'],
       github: 'https://github.com/ChetanAditya765/Plant-Leaf-Prediction',
       image: 'tomato.png',
     },
     {
       title: 'WikiVerse',
-      description: 'Created a platform to fetch and synchronize Wikipedia data across multiple languages.',
+      description:
+        'Created a platform to fetch and synchronize Wikipedia data across multiple languages.',
       tech: ['JavaScript', 'Web Development'],
       github: 'https://github.com/ChetanAditya765/WikiVerse',
       image: 'wikiverse.png',
     },
-  ].map((project) => ({
+  ].map(project => ({
     ...project,
     image: projectImages[project.image],
   }));
@@ -383,7 +393,7 @@ const Featured = () => {
         <StyledProjectsGrid>
           {projects &&
             projects.map(({ title, description, tech, github, image }, i) => (
-              <StyledProject key={i} ref={(el) => (revealProjects.current[i] = el)}>
+              <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <div className="project-content">
                   <div>
                     <p className="project-overline">Featured Project</p>

@@ -88,9 +88,11 @@ const Hero = () => {
   const three = <h3>Engineering Intelligence for Tomorrow.</h3>;
   const four = (
     <p>
-      A software engineer passionate about AI/ML. With experience from internships at Google and
-      AWS, I’ve worked on predictive modeling and real-world AI challenges. I actively contribute to
-      open-source projects and lead initiatives promoting innovation, with impactful projects.
+      I focus on improving model reasoning and reliability through structured analysis and
+      experimentation. My work blends research with engineering — developing interpretable,
+      efficient, and human-aligned AI systems. I’m deeply interested in explainable AI, multimodal
+      learning, and how large models can evolve into practical, trustworthy tools for everyday
+      problem-solving.
     </p>
   );
   const five = (
