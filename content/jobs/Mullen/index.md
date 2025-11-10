@@ -1,12 +1,12 @@
 ---
-date: '2023-05-31'
-title: 'Video Editor'
-company: 'RCB'
+date: '2024-06-30'
+title: 'AI/ML Virtual Intern'
+company: 'Google'
 location: 'Remote'
-range: 'March - May 2023'
-url: 'https://www.royalchallengers.com'
+range: 'April - June 2024'
+url: 'https://google.com'
 ---
 
-- Created motivational mashup videos to enhance team morale and performance.
-- Showcased creativity and storytelling through impactful video content.
-- Delivered high-quality videos that positively influenced the team environment.
+- Gained hands-on experience with cutting-edge AI/ML technologies.
+- Received mentorship from industry leaders to foster growth and innovation.
+- Collaborated on projects to develop intelligent algorithms and data-driven solutions.
