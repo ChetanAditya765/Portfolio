@@ -147,34 +147,13 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is <strong>Chetan Aditya Lakka</strong>. I build intelligent systems
-              that make complex problems easier to solve — with a focus on reliable ML, model
-              interpretability, and practical AI productisation. I became fascinated by software
-              engineering and AI during my undergraduate studies and have steadily moved from
-              prototyping ideas to shipping reproducible research and production-ready pipelines.
-            </p>
-
-            <p>
-              Professionally, I've contributed to programs at{' '}
-              <a href="https://about.google/">Google</a> and{' '}
-              <a href="https://aws.amazon.com/">AWS</a>, and I currently work as an LLM Trainer at{' '}
-              <a href="https://turing.com">Turing</a>, where I analyse model behaviour, produce
-              structured annotations, and help improve the reliability of agentic systems.
-            </p>
-
-            <p>
-              On the research side, I authored <em>Reverse Attribution</em>, a model-agnostic
-              debugging framework that surfaces counter-evidence and explains why models fail —
-              implemented using SHAP, Integrated Gradients, and PyTorch. I also build applied ML
-              projects such as{' '}
-              <a href="https://github.com/ChetanAditya765/Autism-Prediction">Autism Detection</a>{' '}
-              and{' '}
-              <a href="https://github.com/ChetanAditya765/Plant-Leaf-Prediction">Crop Detection</a>.
-            </p>
-
-            <p>
-              I enjoy contributing to open-source, leading technical initiatives, and turning
-              research insights into tools that engineers and stakeholders can actually use.
+              AI Engineer with hands-on experience in agentic AI, LLM evaluation, RLHF/SFT workflows,
+              multimodal AI, prompt optimization, and AI reliability. I currently work on evaluating
+              browser-based Computer Use Agents, analyzing multi-step reasoning, tool and UI
+              interactions, hallucinations, grounding failures, workflow compliance, and model
+              reliability. Alongside evaluation work, I build practical AI systems using Python,
+              FastAPI, LangGraph, PyTorch, RAG, PostgreSQL, and modern LLM tooling, with a focus on
+              reliable, observable, and production-style AI applications.
             </p>
 
             <p>Here are a few technologies and areas I’ve been working with recently:</p>

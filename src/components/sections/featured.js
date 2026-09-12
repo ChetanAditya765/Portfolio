@@ -6,6 +6,7 @@ import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
+import ResolveAIFeatured from '../resolveai/featured';
 
 const StyledProjectsGrid = styled.ul`
   ${({ theme }) => theme.mixins.resetList};
@@ -328,7 +329,7 @@ const Featured = () => {
     {
       title: 'Reverse Attribution',
       description:
-        'Built a model-agnostic debugging framework to explain and visualize ML model failures by identifying counter-evidence suppressing correct predictions. Implemented automated attribution pipelines using SHAP, Integrated Gradients, and PyTorch.',
+        'Model-agnostic ML debugging framework for identifying counter-evidence — features that suppress the correct prediction — using SHAP, Integrated Gradients, counterfactual perturbation, and the A-Flip explanation-instability metric.',
       tech: ['Python', 'Machine Learning', 'Explainable AI'],
       github: 'https://github.com/ChetanAditya765/Reverse-Attribution',
       image: 'reverse_attribution.png',
@@ -388,6 +389,7 @@ const Featured = () => {
       <h2 className="numbered-heading" ref={revealTitle}>
         Some Things I’ve Built
       </h2>
+      <ResolveAIFeatured />
 
       <div>
         <StyledProjectsGrid>
