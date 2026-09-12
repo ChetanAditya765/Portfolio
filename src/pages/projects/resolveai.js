@@ -107,7 +107,7 @@ const ResolveAIPage = ({ location }) => (
         <a className="ra-button" href={repositoryUrl || githubProfile}>
           {repositoryUrl ? 'GitHub source' : 'GitHub profile'}
         </a>
-        <a className="ra-button" href={demoVideoUrl || '#demo'}>
+        <a className="ra-button" href="#demo">
           {demoVideoUrl ? 'Watch demo' : 'Demo video'}
         </a>
         <a className="ra-button" href={pdfPath} download>
@@ -451,8 +451,20 @@ const ResolveAIPage = ({ location }) => (
                 Watch the recorded request, approval, independent verification, and evaluation
                 walkthrough.
               </p>
+              <video
+                controls
+                playsInline
+                preload="none"
+                poster={`${assetPath}dashboard.png`}
+                width="1280"
+                height="790"
+                aria-label="ResolveAI workflow demo"
+              >
+                <source src={demoVideoUrl} type="video/mp4" />
+                Your browser does not support embedded video. Use the recording link below.
+              </video>
               <a className="ra-button" href={demoVideoUrl}>
-                Watch demo
+                Open video separately
               </a>
             </>
           ) : (
