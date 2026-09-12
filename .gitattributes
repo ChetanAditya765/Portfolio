@@ -1,2 +1,8 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Shell hooks must also work after a Windows checkout.
+.husky/pre-commit text eol=lf
+
+# Preserve the exact bytes authenticated by the research asset manifests.
+static/reverse-attribution/*.json -text whitespace=cr-at-eol

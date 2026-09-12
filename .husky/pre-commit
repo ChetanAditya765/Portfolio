@@ -1,4 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run lint-staged
+# Run the installed checker directly; GUI Git environments may have Node but no npm.
+node node_modules/lint-staged/bin/lint-staged.js
