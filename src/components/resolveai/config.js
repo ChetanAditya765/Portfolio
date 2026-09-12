@@ -1,6 +1,5 @@
-// Both demo links and the video section use this recording URL.
-export const demoVideoUrl =
-  'https://github.com/ChetanAditya765/ResolveAI/blob/main/ResolveAI-Polished-Demo.mp4';
+// Served with the portfolio so the recording plays directly in the demo section.
+export const demoVideoUrl = '/resolveai/ResolveAI-Polished-Demo.mp4';
 
 // ResolveAI source repository.
 export const repositoryUrl = 'https://github.com/ChetanAditya765/ResolveAI';

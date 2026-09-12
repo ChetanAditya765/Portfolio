@@ -1,0 +1,152 @@
+{
+  "imdb": {
+    "n": 16,
+    "errors": 0,
+    "sample_accuracy": 1.0,
+    "a_flip_mean": 0.04469721158966422,
+    "a_flip_std": 0.014975015082880041,
+    "candidate_ce_mean": 114.5,
+    "evaluated_candidate_mean": 20.0,
+    "validated_ce_mean": 10.25,
+    "selected_ce_mean": 5.0,
+    "ce_strength_mean_nonempty": 0.06818276941776275,
+    "ce_strength_nonempty_n": 16,
+    "ce_strength_empty_n": 0,
+    "ig_abs_completeness_residual_median": 0.32745689153671265,
+    "ig_abs_completeness_residual_max": 3.396641731262207,
+    "spearman_confidence": {
+      "rho": 0.0058823529411764705,
+      "ci_95": null,
+      "valid_replicates": 0,
+      "reason": "fewer than 20 samples or undefined statistic"
+    },
+    "spearman_logit_margin": {
+      "rho": 0.0058823529411764705,
+      "ci_95": null,
+      "valid_replicates": 0,
+      "reason": "fewer than 20 samples or undefined statistic"
+    },
+    "error_auroc": {
+      "value": null,
+      "ci_95": null,
+      "valid_replicates": 0,
+      "reason": "fewer than 20 samples or undefined statistic"
+    },
+    "correct_a_flip": {
+      "n": 16,
+      "mean": 0.04469721158966422,
+      "median": 0.04265531525015831
+    },
+    "incorrect_a_flip": {
+      "n": 0,
+      "mean": null,
+      "median": null
+    },
+    "mann_whitney_two_sided_p": null,
+    "interpretation": "Exploratory within-run associations; no calibration, causal, or cross-modality claim."
+  },
+  "yelp": {
+    "n": 16,
+    "errors": 0,
+    "sample_accuracy": 1.0,
+    "a_flip_mean": 0.08310110692400485,
+    "a_flip_std": 0.051140388204480185,
+    "candidate_ce_mean": 42.75,
+    "evaluated_candidate_mean": 18.5625,
+    "validated_ce_mean": 8.5,
+    "selected_ce_mean": 4.6875,
+    "ce_strength_mean_nonempty": 0.20449433177709578,
+    "ce_strength_nonempty_n": 16,
+    "ce_strength_empty_n": 0,
+    "ig_abs_completeness_residual_median": 0.10805916786193848,
+    "ig_abs_completeness_residual_max": 0.3758580684661865,
+    "spearman_confidence": {
+      "rho": 0.13539370847220983,
+      "ci_95": null,
+      "valid_replicates": 0,
+      "reason": "fewer than 20 samples or undefined statistic"
+    },
+    "spearman_logit_margin": {
+      "rho": 0.1264705882352941,
+      "ci_95": null,
+      "valid_replicates": 0,
+      "reason": "fewer than 20 samples or undefined statistic"
+    },
+    "error_auroc": {
+      "value": null,
+      "ci_95": null,
+      "valid_replicates": 0,
+      "reason": "fewer than 20 samples or undefined statistic"
+    },
+    "correct_a_flip": {
+      "n": 16,
+      "mean": 0.08310110692400485,
+      "median": 0.07344969734549522
+    },
+    "incorrect_a_flip": {
+      "n": 0,
+      "mean": null,
+      "median": null
+    },
+    "mann_whitney_two_sided_p": null,
+    "interpretation": "Exploratory within-run associations; no calibration, causal, or cross-modality claim."
+  },
+  "cifar10": {
+    "n": 200,
+    "errors": 10,
+    "sample_accuracy": 0.95,
+    "a_flip_mean": 0.5710717409104109,
+    "a_flip_std": 0.26871225340803295,
+    "candidate_ce_mean": 504.755,
+    "evaluated_candidate_mean": 20.0,
+    "validated_ce_mean": 9.52,
+    "selected_ce_mean": 4.785,
+    "ce_strength_mean_nonempty": 1.021862890879313,
+    "ce_strength_nonempty_n": 200,
+    "ce_strength_empty_n": 0,
+    "ig_abs_completeness_residual_median": 0.2850034236907959,
+    "ig_abs_completeness_residual_max": 2.323409080505371,
+    "spearman_confidence": {
+      "rho": -0.15556620125496404,
+      "ci_95": [
+        -0.2812010476012992,
+        -0.01902816155155053
+      ],
+      "valid_replicates": 1000,
+      "requested_replicates": 1000,
+      "reason": "percentile bootstrap; undefined resamples omitted"
+    },
+    "spearman_logit_margin": {
+      "rho": -0.1649516237905948,
+      "ci_95": [
+        -0.2873314441262658,
+        -0.027594516176702333
+      ],
+      "valid_replicates": 1000,
+      "requested_replicates": 1000,
+      "reason": "percentile bootstrap; undefined resamples omitted"
+    },
+    "error_auroc": {
+      "value": 0.6089473684210527,
+      "ci_95": [
+        0.45200405714182906,
+        0.766298490686703
+      ],
+      "valid_replicates": 1000,
+      "requested_replicates": 1000,
+      "reason": "percentile bootstrap; undefined resamples omitted"
+    },
+    "correct_a_flip": {
+      "n": 190,
+      "mean": 0.5680608394114595,
+      "median": 0.5003381222486496
+    },
+    "incorrect_a_flip": {
+      "n": 10,
+      "mean": 0.6282788693904877,
+      "median": 0.6187084019184113
+    },
+    "mann_whitney_two_sided_p": 0.24705197825343028,
+    "interpretation": "Exploratory within-run associations; no calibration, causal, or cross-modality claim."
+  }
+}

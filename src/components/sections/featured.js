@@ -7,6 +7,7 @@ import { srConfig } from '@config';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
 import ResolveAIFeatured from '../resolveai/featured';
+import ReverseAttributionFeatured from '../reverse-attribution/featured';
 
 const StyledProjectsGrid = styled.ul`
   ${({ theme }) => theme.mixins.resetList};
@@ -220,6 +221,7 @@ const StyledProject = styled.li`
     a {
       ${({ theme }) => theme.mixins.flexCenter};
       padding: 10px;
+      gap: 6px;
 
       &.external {
         svg {
@@ -307,6 +309,17 @@ const StyledProject = styled.li`
 const Featured = () => {
   const data = useStaticQuery(graphql`
     {
+      researchImage: file(relativePath: { eq: "reverse_attribution.png" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 700
+            height: 440
+            transformOptions: { cropFocus: NORTH }
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+          )
+        }
+      }
       images: allFile(filter: { extension: { regex: "/(jpg|jpeg|png)/" } }) {
         edges {
           node {
@@ -324,16 +337,9 @@ const Featured = () => {
     acc[node.relativePath] = getImage(node.childImageSharp.gatsbyImageData);
     return acc;
   }, {});
+  const researchImage = getImage(data.researchImage.childImageSharp.gatsbyImageData);
 
   const projects = [
-    {
-      title: 'Reverse Attribution',
-      description:
-        'Model-agnostic ML debugging framework for identifying counter-evidence — features that suppress the correct prediction — using SHAP, Integrated Gradients, counterfactual perturbation, and the A-Flip explanation-instability metric.',
-      tech: ['Python', 'Machine Learning', 'Explainable AI'],
-      github: 'https://github.com/ChetanAditya765/Reverse-Attribution',
-      image: 'reverse_attribution.png',
-    },
     {
       title: 'Autism Detection',
       description:
@@ -390,17 +396,18 @@ const Featured = () => {
         Some Things I’ve Built
       </h2>
       <ResolveAIFeatured />
+      <ReverseAttributionFeatured image={researchImage} />
 
       <div>
         <StyledProjectsGrid>
           {projects &&
-            projects.map(({ title, description, tech, github, image }, i) => (
+            projects.map(({ title, description, tech, github, image, detail }, i) => (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <div className="project-content">
                   <div>
                     <p className="project-overline">Featured Project</p>
                     <h3 className="project-title">
-                      <a href={github}>{title}</a>
+                      <a href={detail || github}>{title}</a>
                     </h3>
                     <div className="project-description">
                       <p>{description}</p>
@@ -413,6 +420,13 @@ const Featured = () => {
                       </ul>
                     )}
                     <div className="project-links">
+                      {detail && (
+                        <a
+                          href={detail}
+                          aria-label={`Explore ${title} and its interactive example`}>
+                          Explore project <Icon name="External" />
+                        </a>
+                      )}
                       <a href={github} aria-label="GitHub Link">
                         <Icon name="GitHub" />
                       </a>
@@ -421,7 +435,7 @@ const Featured = () => {
                 </div>
 
                 <div className="project-image">
-                  <a href={github}>
+                  <a href={detail || github}>
                     <GatsbyImage image={image} alt={title} className="img" />
                   </a>
                 </div>
