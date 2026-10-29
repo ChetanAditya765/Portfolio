@@ -73,6 +73,18 @@ Yes, you can fork this repo. Please give me proper credit by linking back to [br
    npm run serve
    ```
 
+## Reverse Attribution research page
+
+The case study at `/projects/reverse-attribution/` shares the ResolveAI page's layout and includes an interactive analytical example, paper-derived results, dataset figures, and the current research PDF. Its homepage card shares the ResolveAI card's layout, carries the “Featured Research Project” label, and opens the page through its title, image, and “View research project” button.
+
+- Page: `src/pages/projects/reverse-attribution.js`
+- Shared project descriptions and links: `src/components/reverse-attribution/config.js`
+- Browser example: `src/components/reverse-attribution/math.js` and `playground.js`
+- Paper, figure, and summary assets: `static/reverse-attribution/`
+- Asset origin and SHA-256 values: `static/reverse-attribution/asset-manifest.json`
+
+Run `node scripts/test-ra-demo.cjs` to verify the analytical counterexample, empty selection, changed prediction, and zero-attribution boundary. Run `npm run build` for the production site. The browser example uses a three-feature mathematical model; the recorded neural-network results remain a separate, explicitly labeled study. When updating the paper, refresh its associated summary, figures, preview, and asset manifest together.
+
 ## 🎨 Color Reference
 
 | Color          | Hex                                                                |

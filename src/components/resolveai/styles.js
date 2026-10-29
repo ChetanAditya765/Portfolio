@@ -179,6 +179,13 @@ export const CaseStudy = styled.main`
     border-radius: var(--border-radius);
     background: var(--light-navy);
   }
+  .ra-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 24px;
+    border-radius: var(--border-radius);
+  }
   .ra-list li {
     margin-bottom: 10px;
     line-height: 1.5;

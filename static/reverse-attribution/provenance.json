@@ -1,0 +1,86 @@
+{
+  "runs": {
+    "imdb": {
+      "path": "corrected_results/imdb_seed42_n16",
+      "manifest_sha256": "c5a81491b750e6f0c9bcda1149cdf5000b4163bb4e8a348bee67e1b54a6b0858",
+      "samples_sha256": "f4bf424d8c1fea8f466030364bbd5f6b4722ef2b50fd6a6713aa1841b3838722"
+    },
+    "yelp": {
+      "path": "corrected_results/yelp_seed42_n16",
+      "manifest_sha256": "8181aa60ed6a4c86939ed964189418256d4da364466825c1cea5a872d9547e53",
+      "samples_sha256": "580147d2b2db97fe5c306d3d8679356e16d081352779a9c86219b56a0ba29d51"
+    },
+    "cifar10": {
+      "path": "corrected_results/cifar10_seed42_n200",
+      "manifest_sha256": "586716b1ee430d48c6fb83d1599d183bc581ebf70e3b18a2e593ad2c76dfdac3",
+      "samples_sha256": "acb78368e2d57cca27cafa05067486d452630339741f184e424add7337796747"
+    }
+  },
+  "figures": {
+    "imdb_observations.png": {
+      "data": {
+        "path": "corrected_results/imdb_seed42_n16",
+        "manifest_sha256": "c5a81491b750e6f0c9bcda1149cdf5000b4163bb4e8a348bee67e1b54a6b0858",
+        "samples_sha256": "f4bf424d8c1fea8f466030364bbd5f6b4722ef2b50fd6a6713aa1841b3838722"
+      },
+      "meaning": "actual raw observations; no reconstructed distribution"
+    },
+    "imdb_example.png": {
+      "sample_id": 2147,
+      "selection": "first incorrect in sorted subset, otherwise first",
+      "data": {
+        "path": "corrected_results/imdb_seed42_n16",
+        "manifest_sha256": "c5a81491b750e6f0c9bcda1149cdf5000b4163bb4e8a348bee67e1b54a6b0858",
+        "samples_sha256": "f4bf424d8c1fea8f466030364bbd5f6b4722ef2b50fd6a6713aa1841b3838722"
+      }
+    },
+    "yelp_observations.png": {
+      "data": {
+        "path": "corrected_results/yelp_seed42_n16",
+        "manifest_sha256": "8181aa60ed6a4c86939ed964189418256d4da364466825c1cea5a872d9547e53",
+        "samples_sha256": "580147d2b2db97fe5c306d3d8679356e16d081352779a9c86219b56a0ba29d51"
+      },
+      "meaning": "actual raw observations; no reconstructed distribution"
+    },
+    "yelp_example.png": {
+      "sample_id": 3265,
+      "selection": "first incorrect in sorted subset, otherwise first",
+      "data": {
+        "path": "corrected_results/yelp_seed42_n16",
+        "manifest_sha256": "8181aa60ed6a4c86939ed964189418256d4da364466825c1cea5a872d9547e53",
+        "samples_sha256": "580147d2b2db97fe5c306d3d8679356e16d081352779a9c86219b56a0ba29d51"
+      }
+    },
+    "cifar10_observations.png": {
+      "data": {
+        "path": "corrected_results/cifar10_seed42_n200",
+        "manifest_sha256": "586716b1ee430d48c6fb83d1599d183bc581ebf70e3b18a2e593ad2c76dfdac3",
+        "samples_sha256": "acb78368e2d57cca27cafa05067486d452630339741f184e424add7337796747"
+      },
+      "meaning": "actual raw observations; no reconstructed distribution"
+    },
+    "cifar10_example.png": {
+      "sample_id": 226,
+      "selection": "first incorrect in sorted subset, otherwise first",
+      "data": {
+        "path": "corrected_results/cifar10_seed42_n200",
+        "manifest_sha256": "586716b1ee430d48c6fb83d1599d183bc581ebf70e3b18a2e593ad2c76dfdac3",
+        "samples_sha256": "acb78368e2d57cca27cafa05067486d452630339741f184e424add7337796747"
+      }
+    }
+  },
+  "generator_sha256": "3e04ea3dfa77a2606b2b1929b8cfd8e07abfc247eb40daa4e8493ce1d7759ba5",
+  "outputs": {
+    "cifar10_example.png": "9eb3113c63e5bdd7bd5ff9c8f607c67c2a0820c34352975436c3708309dec7d5",
+    "cifar10_observations.png": "acbe80c0c1361e899da96bba7f8abd407f473b85acc25cc0a0fb4e536172a863",
+    "imdb_example.png": "82f9cf6a9d3f7a3d646f057a8d63d25111ecb041a8c9f3ca59e58d2bdbfee56d",
+    "imdb_observations.png": "1d82516c5082f8dc5e5ebd96753badfdd798c7029516d1fc4820301ca0b0181f",
+    "results_text.tex": "d0c1e1d7a00600d6e378d0b3245c9ccf287f15a1de86fabcaa7b199af52c520c",
+    "summary.csv": "dd7b09a1ff68d59b28679a3ce54e17eb3c929dd0c90b366bfacf5756b3a58ef2",
+    "summary.json": "d525cfcf3e816b36468859579623891411d721441c7adcdfaf45ea059d8d2840",
+    "table_associations.tex": "d11c0bc209eb8112b4ac33ac9bc0a862075fe21f35d49afd6c6438326adb29f9",
+    "table_ra.tex": "0b823626ce0a94ad03d9b51adb39e2b725bdc93161f6fb1494362271532b335b",
+    "yelp_example.png": "c6bf178146084af297f398f477106c8f0592ab0b5d0becd2703299ef05fb5649",
+    "yelp_observations.png": "ba88407718f6cce54b61ad2ea2435da45125792163aaa04aaf2fcb76b2d14b8b"
+  }
+}

@@ -32,7 +32,7 @@ const StyledHeroSection = styled.section`
   h3 {
     margin-top: 5px;
     color: var(--slate);
-    line-height: 0.9;
+    line-height: 1.3;
   }
   p {
     margin: 20px 0 0;
@@ -45,15 +45,11 @@ const StyledHeroSection = styled.section`
   .globe-container {
     position: absolute;
     top: 50%;
-    right: 5%;
+    right: 0;
     transform: translateY(-50%);
     width: 300px;
     height: 300px;
-    @media (max-width: 768px) {
-      width: 200px;
-      height: 200px;
-    }
-    @media (max-width: 480px) {
+    @media (max-width: 1280px) {
       display: none;
     }
   }
@@ -61,12 +57,12 @@ const StyledHeroSection = styled.section`
 
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(typeof window !== 'undefined' && window.innerWidth < 480);
+      setIsMobile(typeof window !== 'undefined' && window.innerWidth <= 1280);
     };
     handleResize();
     if (typeof window !== 'undefined') {
@@ -85,14 +81,14 @@ const Hero = () => {
 
   const one = <h1>Hi, this is</h1>;
   const two = <h2 className="big-heading">Chetan Aditya</h2>;
-  const three = <h3>Engineering Intelligence for Tomorrow.</h3>;
+  const three = <h3>Building AI agents and workflow automation.</h3>;
   const four = (
     <p>
-      I focus on improving model reasoning and reliability through structured analysis and
-      experimentation. My work blends research with engineering — developing interpretable,
-      efficient, and human-aligned AI systems. I’m deeply interested in explainable AI, multimodal
-      learning, and how large models can evolve into practical, trustworthy tools for everyday
-      problem-solving.
+      I build AI agents that connect tools, APIs, and data to carry out practical workflows. My
+      projects use Python, FastAPI, LangGraph, and PostgreSQL, with human approvals and tests that
+      check whether each task was completed correctly. At Turing, I evaluate computer-use agents and
+      work as a Team Lead and QA specialist, analyzing failures in planning, tool use, and task
+      completion.
     </p>
   );
   const five = (

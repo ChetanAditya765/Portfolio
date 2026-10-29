@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { projectPath, assetPath } from './config';
 
-const Card = styled.article`
+export const Card = styled.article`
   display: grid;
   grid-template-columns: 1.05fr 1fr;
   align-items: center;

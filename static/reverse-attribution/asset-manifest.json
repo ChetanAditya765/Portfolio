@@ -1,0 +1,51 @@
+{
+  "project": "Reverse Attribution",
+  "source_repository": "https://github.com/ChetanAditya765/Reverse-Attribution",
+  "snapshot_date": "2026-09-13",
+  "paper_pages": 5,
+  "protocol": "ra-v2",
+  "publication_records": 232,
+  "assets": {
+    "reverse-attribution.pdf": {
+      "sha256": "ffb8e9e040f3d04f35cbd66e0429f2e2f1544fdf69f18e1fc78431b4d69c0d1b",
+      "research_source": "output/pdf/reverse_attribution.pdf",
+      "bytes": 285036
+    },
+    "paper-preview.png": {
+      "sha256": "d6a75addbc2f42340ea23b38b54a7967a613193191facfbabd8a139c718b6a31",
+      "research_source": "tmp/pdfs/editorial_20260912/final-1.png",
+      "bytes": 454416
+    },
+    "cifar10_observations.png": {
+      "sha256": "acbe80c0c1361e899da96bba7f8abd407f473b85acc25cc0a0fb4e536172a863",
+      "research_source": "RA_IEEE Latex/publication/cifar10_observations.png",
+      "bytes": 75455
+    },
+    "cifar10_example.png": {
+      "sha256": "9eb3113c63e5bdd7bd5ff9c8f607c67c2a0820c34352975436c3708309dec7d5",
+      "research_source": "RA_IEEE Latex/publication/cifar10_example.png",
+      "bytes": 38374
+    },
+    "imdb_example.png": {
+      "sha256": "82f9cf6a9d3f7a3d646f057a8d63d25111ecb041a8c9f3ca59e58d2bdbfee56d",
+      "research_source": "RA_IEEE Latex/publication/imdb_example.png",
+      "bytes": 39199
+    },
+    "yelp_example.png": {
+      "sha256": "c6bf178146084af297f398f477106c8f0592ab0b5d0becd2703299ef05fb5649",
+      "research_source": "RA_IEEE Latex/publication/yelp_example.png",
+      "bytes": 43335
+    },
+    "summary.json": {
+      "sha256": "d525cfcf3e816b36468859579623891411d721441c7adcdfaf45ea059d8d2840",
+      "research_source": "RA_IEEE Latex/publication/summary.json",
+      "bytes": 4775
+    },
+    "provenance.json": {
+      "sha256": "1a183d1959be352ae6ca641289a0dbda693d6ec8bd08a3e5b433de33408b59d1",
+      "research_source": "RA_IEEE Latex/publication/provenance.json",
+      "bytes": 4366
+    }
+  },
+  "notes": "Portfolio copies of verified paper assets. The interactive mathematical example is separate from the recorded neural-network experiments. Figure provenance paths refer to the research repository."
+}
