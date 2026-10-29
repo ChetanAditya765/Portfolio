@@ -147,13 +147,18 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              AI Engineer with hands-on experience in agentic AI, LLM evaluation, RLHF/SFT workflows,
-              multimodal AI, prompt optimization, and AI reliability. I currently work on evaluating
-              browser-based Computer Use Agents, analyzing multi-step reasoning, tool and UI
-              interactions, hallucinations, grounding failures, workflow compliance, and model
-              reliability. Alongside evaluation work, I build practical AI systems using Python,
-              FastAPI, LangGraph, PyTorch, RAG, PostgreSQL, and modern LLM tooling, with a focus on
-              reliable, observable, and production-style AI applications.
+              I’m an AI Engineer focused on agent development and workflow automation. I build
+              systems that retrieve relevant information, call tools, pause for human approval, and
+              verify the result. My work includes ResolveAI, a local repository-access automation
+              system with simulated permission changes, built using Python, FastAPI, LangGraph,
+              PostgreSQL, and RAG.
+            </p>
+            <p>
+              As a contractor at Turing, I’ve completed nearly 1,500 computer-use agent evaluations
+              and progressed into Team Lead and QA responsibilities. I review how agents plan,
+              interact with interfaces, and use tools, then document failures and develop evaluation
+              criteria. Alongside this work, I build applied ML projects and reproducible
+              evaluations across text and vision models.
             </p>
 
             <p>Here are a few technologies and areas I’ve been working with recently:</p>

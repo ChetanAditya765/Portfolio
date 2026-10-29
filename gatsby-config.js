@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Chetan Aditya',
     description:
-      'Chetan Aditya is an aspiring software engineer who specializes in creating predictive models using Machine Learning',
+      'Chetan Aditya is an AI Engineer building agents and workflow automation with Python, FastAPI, and LangGraph, with experience in computer-use agent evaluation and QA.',
     siteUrl: 'https://chetanaditya.netlify.app', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@CA_765',
